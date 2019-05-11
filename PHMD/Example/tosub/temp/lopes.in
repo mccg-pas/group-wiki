@@ -1,0 +1,51 @@
+units           real
+boundary        p p p
+neighbor        2.0 bin
+neigh_modify    every 1 delay 0 check yes
+
+atom_style      full
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  opls
+improper_style  cvff
+pair_style      lj/cut/coul/long 16 16
+pair_modify     mix geometric
+kspace_style    pppm 1e-6
+special_bonds   lj/coul 0.0 0.0 0.5
+
+read_data       lopes.data
+
+replicate       8 8 8
+
+fix 12 all      temp/rescale 1 1 1 1.0 1.0
+fix 13 all      nve
+fix 14 all      deform 1 x final 0.0 120.000 y final 0.0 120.000 z final 0.0 120.000 units box
+restart         1000 IL.restart1 IL.restart2
+timestep        0.01
+run             500000
+unfix 12
+unfix 13
+unfix 14
+
+velocity        all create 298 298 dist gaussian
+
+thermo          10000
+thermo_style    custom step lx ly lz
+
+timestep        0.5
+fix 8 all       npt temp 298 298 200 iso 1 1 1000 tchain 3 pchain 3 mtk yes
+restart         1000 IL.restart1 IL.restart2
+run             4000000
+unfix 8
+
+thermo          10000
+thermo_style    custom step lx ly lz
+
+fix 10 all      npt temp 298 298 200 iso 1 1 1000 tchain 3 pchain 3 mtk yes
+restart         10000 IL.restart1 IL.restart2
+dump d1 all     custom 1000 traj.lmp element xu yu zu
+dump_modify d1  element C C C C C C C F H H H H N N N
+dump_modify d1  sort id
+run             1000000
+undump d1
+unfix 10

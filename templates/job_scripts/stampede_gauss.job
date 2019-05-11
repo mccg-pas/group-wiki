@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#SBATCH -N 1 # one node
+#SBATCH -n 1 # one task
+#SBATCH -c 64 # cpus-per-task
+#SBATCH -t 04:00:00 
+#SBATCH -p normal 
+#SBATCH -e job.err
+#SBATCH -o job.log
+
+module load gaussian 
+
+time g16 < job.com > job.out 2>&1

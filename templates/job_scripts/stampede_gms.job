@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#SBATCH -J ch2-ac-3-p6
+#SBATCH -o ch2-ac-3-p6.log
+#SBATCH -e ch2-ac-3-p6.e%j
+#SBATCH -p skx-normal
+#SBATCH -N 4
+#SBATCH --tasks-per-node=16
+#SBATCH -t 24:00:00
+
+module load intel/18.0.2
+module load impi/18.0.2
+module load my_gamess/2017.04.20.srs-magnus # needs to be changed
+
+export OMP_NUM_THREADS=1
+
+rungms ch2-ac-3-p6.inp 00 64 16

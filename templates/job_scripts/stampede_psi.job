@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#SBATCH -J name 
+#SBATCH -e name.err
+#SBATCH -p normal
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -c 16
+#SBATCH -t 03:00:00
+
+module load psi4
+psi4 name.inp name.log
+find . -empty -delete # slurm creates empty slurm-[0-9].out 

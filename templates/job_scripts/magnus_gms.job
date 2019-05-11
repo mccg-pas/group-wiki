@@ -1,0 +1,12 @@
+#!/bin/bash --login
+
+#SBATCH --nodes=16
+#SBATCH --account=pawsey0197
+#SBATCH --time=24:00:00
+#SBATCH --export=%j.err
+#SBATCH --output=hess.log
+#SBATCH --mail-type=ALL
+
+export OMP_NUM_THREADS=1
+
+/group/pawsey0197/software/cle60up05/apps/gamess_cray_build/rungms hess.inp 00 384 24

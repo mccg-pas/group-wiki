@@ -1,0 +1,27 @@
+# MP2 WITH DENSITY FITTING
+
+memory 32 Gb
+
+molecule complex {
+-1 1
+ P       -5.63460673      0.50813673      0.33662294
+ O       -6.56859046     -0.61973049     -0.05228541
+ O       -5.87755783      1.38663857      1.54584917
+ O       -5.56876693      1.45824659     -1.05787463
+ H       -4.87098935      2.12896356     -0.91599991
+ O       -4.06758213     -0.03375721      0.38976219
+ H       -3.75807381      0.17328806      1.29295638
+units angstrom
+no_reorient
+symmetry c1
+}
+
+set globals {
+    basis cc-pVTZ
+    scf_type DF
+    freeze_core True
+    guess sad
+    S_ORTHOGONALIZATION canonical
+}
+
+energy('mp2')

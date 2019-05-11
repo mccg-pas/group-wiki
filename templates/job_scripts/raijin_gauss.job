@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#PBS -P k96
+#PBS -l walltime=100:00:00
+#PBS -l mem=126GB
+#PBS -l ncpus=16
+#PBS -l jobfs=500GB
+#PBS -l software=g09
+#PBS -l wd
+
+module load gaussian/g09e01
+
+g09 << END > name.log 2>&1
