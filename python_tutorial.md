@@ -839,7 +839,9 @@ the line and appends the new line to the `new_coords` list.
 
 The code above can be re-written using functions, defining a function using the `def`
 keyword. Comments can be added to each function definition using triple quotes,
-called a docstring.
+called a docstring. These docstrings appear when calling `help()` on a
+function, or when creating documentation for a package that may be hosted on
+PyPi.
 
 ```python
 def read_file(file): 
@@ -922,12 +924,12 @@ used to modify 1000 xyz files in one go if we wanted to:
 lst = [file1, file2, file3...]
 
 for file in lst:
-    coords = read_file(lst)
+    coords = read_file(file)
     new_coords = modify_coords(coords)
     write_file(new_coords)
 ```
 
-It's that easy! As your programs get longer, you will appreciate how useful
+It's that easy! As your programs get bigger, you will appreciate how useful
 functions can be.
 
 
