@@ -100,6 +100,11 @@ multi line
 comment
 """
 ```
+To print output to the screen, using the `print()` function.
+
+Python's style guides, or PEP documents, state that names should be split
+with underscores, not camel case as in Javascript. For example, write 
+`write_to_file`, not `writeToFile`.
 
 # Fundamental data types
 
@@ -779,7 +784,7 @@ To return objects from a function, simply use the `return` keyword:
 def add_10(num):
     return num + 10
 
-result = add_10()
+result = add_10(10)
 print(result)
 
 # Output:
@@ -946,9 +951,9 @@ pre-installed with Python, type `import math`:
 ```
 
 Attributes of the math module are accessed through `math.attribute`. As shown
-above, the value of $\pi$ can be obtained with `math.pi`. 
+above, the value of π can be obtained with `math.pi`. 
 
-To give an alias to an imported package, use `import ... as ...`
+To give an alias to an imported package, use `import ... as ...`.
 
 ```python
 import matplotlib.pyplot as plt
@@ -1078,11 +1083,11 @@ human.hands = 2
 
 We know that humans should have two hands- that shouldn't be something that a
 user has to add manually. So we can assign a `hands` attribute to every example
-of a Human that we create when calling the `Human` class i.e. `human = Human()`
-To do this, we use the `__init__` method, a reserved name in Python. Even though
-it is not explicitly declared in Python3, every user-defined class in Python is
-derived from the `Object` class, and can have an `__init__` method with the
-first argument of `self`.
+of a Human that we create when calling the `Human` class i.e. `human =
+Human()`. To do this, we use the `__init__` method, a reserved name in Python.
+Even though it is not explicitly declared in Python3, every user-defined class
+in Python is derived from the `Object` class, and can have an `__init__` method
+with the first argument of `self`.
 
 The attributes of each instance are tied to the class by using the `self`
 keyword. For example, creating a `Human` class with two hands:
@@ -1392,7 +1397,7 @@ even though they are intrinsically linked. To account for this:
 class Atom:
 
     def __init__(self, x, y, z, sym = None, atnum = None): 
-        # keyword arguments must come after positional
+        
         if sym is not None:
             self.sym = sym
             self.atnum = self.get_atnum()
@@ -1433,7 +1438,7 @@ having to write out each x, y, and z component:
 class Atom:
 
     def __init__(self, sym = None, atnum = None, coords = None): 
-        # keyword arguments must come after positional
+        
         if sym is not None:
             self.sym = sym
             self.atnum = self.get_atnum()
@@ -1474,7 +1479,7 @@ the atom's position in space:
 class Atom:
 
     def __init__(self, sym = None, atnum = None, coords = None): 
-        # keyword arguments must come after positional
+
         if sym is not None:
             self.sym = sym
             self.atnum = self.get_atnum()
