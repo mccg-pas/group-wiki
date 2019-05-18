@@ -28,10 +28,8 @@ Parse GAMESS log files for use with [molden](http://cheminf.cmbi.ru.nl/molden/),
 
 Useful when generating IR spectra as molden automatically fits Lorentzian curves to the intensities found from the Hessian.
 
-
 # Input files and job scripts
 Example files are stored in the templates folder.
-
 
 # Python tutorial
 Have a look through this [tutorial](python_tutorial.md) for some useful tips on using Python. 
@@ -41,4 +39,9 @@ See [this page](compilation.md) for information on how to compile various progra
 
 # Useful commands
 See [here](useful_commands.md) for useful commands.
+
+# System admin
+Use [folder_sizes.py](folder_sizes.py) to obtain the sizes of each folder in
+the current directory. Useful for logging scratch space usage. (May throw errors if directory names contain spaces)
+
 
