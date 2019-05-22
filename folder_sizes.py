@@ -2,37 +2,34 @@
 
 import subprocess
 
-def folder_sizes(dirs):
-    """
-    Returns dictionary containing each folder as keys and their sizes
-    as values, stored in a dictionary themselves.
-    """
-    sizes = subprocess.run(['du', '-d', '1'], encoding = 'utf-8',
-            stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
-    # pipe stderr into stdout to avoid ugly output to screen
-    sizes = sizes.stdout.split('\n')[:-2]
-    for line in sizes:
-        if 'Operation not permitted' not in line:
-            size, folder = line.split('\t')
-            dirs[folder[2:]] = {'size': size}
-
-    return dirs
-
 def human_readable_sizes(dirs):
     """
     Returns a dictionary with folders as keys and folder sizes as
     values in a nested dictionary value. Folder sizes found using
-    `du -h -d 1`.
+    `du -h -d 1`, or if `-d` is not supported with the version of 
+    du installed, `du -h --max-depth=1` (GNU vs BSD).
     """
-    readable = subprocess.run(['du', '-h', '-d', '1'], encoding = 'utf-8',
-               stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
-    readable = readable.stdout.split('\n')[:-1]
+    try:
+        readable = subprocess.run(['du', '-h', '-d', '1'], encoding = 'utf-8',
+                   stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
+        readable = readable.stdout.split('\n')[:-1]
 
-    for line in readable[:-1]:
-        if 'Operation not permitted' not in line:
-            size, folder = line.split('\t')
-            folder = folder[2:]
-            dirs[folder] = {'readable': size.strip()}
+        for line in readable[:-1]:
+            if 'Operation not permitted' not in line:
+                size, folder = line.split('\t')
+                folder = folder[2:]
+                dirs[folder] = {'readable': size.strip()}
+
+    except ValueError:
+        readable = subprocess.run(['du', '-h', '--max-depth=1'], encoding = 'utf-8',
+                   stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
+        readable = readable.stdout.split('\n')[:-1]
+
+        for line in readable[:-1]:
+            if 'Operation not permitted' not in line:
+                size, folder = line.split('\t')
+                folder = folder[2:]
+                dirs[folder] = {'readable': size.strip()}
 
     total_size = readable[-1].split('\t')[0].strip()
     return dirs, total_size
