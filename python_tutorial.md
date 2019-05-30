@@ -1015,7 +1015,7 @@ number = 30
 try:
     print("Printing number: " + number)
 except TypeError:
-    print(f"Printing number: " + str(number))
+    print("Printing number: " + str(number))
 ```
 
 Here we are predicting that `number` may not be a string, and adding in code to 
