@@ -15,7 +15,7 @@ def human_readable_sizes(dirs):
         readable = readable.stdout.split('\n')[:-1]
 
         for line in readable[:-1]:
-            if 'Operation not permitted' not in line:
+            if 'Operation not permitted' not in line and 'cannot read' not in line:
                 size, folder = line.split('\t')
                 folder = folder[2:]
                 dirs[folder] = {'readable': size.strip()}
@@ -26,7 +26,7 @@ def human_readable_sizes(dirs):
         readable = readable.stdout.split('\n')[:-1]
 
         for line in readable[:-1]:
-            if 'Operation not permitted' not in line:
+            if 'Operation not permitted' not in line and 'cannot read' not in line:
                 size, folder = line.split('\t')
                 folder = folder[2:]
                 dirs[folder] = {'readable': size.strip()}
