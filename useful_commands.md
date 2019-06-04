@@ -7,6 +7,7 @@
 - To view queue: `squeue -u <user>`
 - To modify parameters of the job while in queue: `scontrol update jobid <jobid> <parameter>`
 - To view job information: `scontrol show jobid <jobid>`  
+- To view available nodes: `sinfo`
 
 To modify the output of the `squeue` command, pass the `-o` flag.
 For example:
