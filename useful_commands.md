@@ -22,6 +22,7 @@ $ squeue -o "%.10i %.50Z %.10P %.15j %.8u %8Q %.8T %.10M %.4C %.12l %.12L %.6D %
 - To submit jobs: `qsub <jobname>`
 - To cancel jobs: `qdel <jobid>`
 - To view queue: `qstat -u <user>`
+- To view jobs of the group: `nqstat`
  
 ## Supercomputer allocations
 
