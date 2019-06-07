@@ -1,8 +1,8 @@
 #!/bin/sh
 
-#SBATCH -N 1 # one node
-#SBATCH -n 1 # one task
-#SBATCH -c 64 # cpus-per-task
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -c 64
 #SBATCH -t 04:00:00 
 #SBATCH -p normal 
 #SBATCH -e job.err
