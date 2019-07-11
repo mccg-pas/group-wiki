@@ -42,3 +42,8 @@ Run as `gamess_to_molden.py input.log`
 Use [folder_sizes.py](folder_sizes.py) to obtain the sizes of each folder in
 the current directory.  Useful for logging scratch space usage. (May throw
 errors if directory names contain spaces)
+
+# Incompatibilities between software and calculation output
+
+Gaussview 5 cannot read a Gaussian 16 frequency output. A fix is described
+[here](GV5_frequency_fix).
