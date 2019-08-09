@@ -39,11 +39,28 @@ Run as `gamess_to_molden.py input.log`
 
 # System admin
 
-Use [folder_sizes.py](folder_sizes.py) to obtain the sizes of each folder in
+## [folder_sizes.py](folder_sizes.py)
+
+Use this script to obtain the sizes of each folder in
 the current directory.  Useful for logging scratch space usage. (May throw
 errors if directory names contain spaces)
 
-# Incompatibilities between software and calculation output
+## Clear Massive scratch space
+ 
+Use [clean_scratch.sh](clean_scratch.sh) to remove all files that are not
+required for currently running jobs. 
+
+NB: Do NOT use this script if you run jobs from the scratch folder and have no
+local backups. This script will delete all of your work! 
+
+To remove temporary files in the group scratch folder, run the following command:
+
+`cd /scratch/sn29; ls -l | grep $USER | awk '{print $NF}' | grep ^[0-9] | xargs rm -r; cd -`
+
+This will remove folders written by SLURM i.e. folders named with the SLURM job
+id. 
+
+## Incompatibilities between software and calculation output
 
 Gaussview 5 cannot read a Gaussian 16 frequency output. A fix is described
-[here](GV5_frequency_fix).
+[here](GV5_frequency_fix.md).
