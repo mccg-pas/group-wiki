@@ -1,4 +1,10 @@
 -----
+Warning
+-----
+This suite of codes is no longer actively updated, but it may suit your needs.
+A new suite of codes is available at https://github.com/PHalat/LAMMPS
+
+-----
 Guide to using these codes
 -----
 Note:
