@@ -1,0 +1,14 @@
+mol new 3Fc4mimeFAP.xyz 
+topo retypebonds 
+topo guessangles 
+topo guessdihedrals 
+topo guessimpropers 
+topo writelammpsdata 3Fc4mimeFAP.data 
+mol delete all 
+mol new 3Fc4mpyreFAP.xyz 
+topo retypebonds 
+topo guessangles 
+topo guessdihedrals 
+topo guessimpropers 
+topo writelammpsdata 3Fc4mpyreFAP.data 
+mol delete all 
