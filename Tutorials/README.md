@@ -15,3 +15,9 @@ and [SLURM](https://slurm.schedmd.com/) job schedulers.
 # NAMD
 
 Comprehensive tutorial on using [NAMD](http://www.ks.uiuc.edu/Research/namd) along with visualisation using [VMD](https://www.ks.uiuc.edu/Research/vmd).
+
+# Saving data
+
+See [this tutorial](backup_data.md) for information of how to use the
+[rclone](https://rclone.org/) program to back up data from HPC clusters to
+cloud storage, and how to automate the process with the use of cron jobs.
