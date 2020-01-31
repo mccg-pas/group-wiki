@@ -1,0 +1,3 @@
+[submodule "Scripts/LAMMPS"]
+	path = Scripts/LAMMPS
+	url = https://github.com/PHalat/LAMMPS.git
