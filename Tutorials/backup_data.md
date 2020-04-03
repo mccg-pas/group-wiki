@@ -16,8 +16,14 @@ curl https://rclone.org/install.sh | sudo bash
 ```
 
 You may have to change the installation paths depending on whether you have
-root access. If so, redirect the shell script to a file with `curl ... > install.sh` 
-and edit this directly.
+root access. If so, save the shell script to a file with `curl -O https://rclone.org/install.sh`
+and edit this directly. On linux machines, replace lines 150-161 with
+```
+[ ! -d "$HOME/bin" ] && mkdir "$HOME/bin"
+cp rclone "$HOME/bin/rclone"
+chmod 755 "$HOME/bin/rcone" 
+```
+and then run `sh install.sh` to make `rclone` available in the `~/bin` directory.
 
 Once installed, you have to configure `rclone` to connect to your choice of
 cloud storage. All common storage providers are available, including
