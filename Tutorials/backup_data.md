@@ -21,7 +21,7 @@ and edit this directly. On linux machines, replace lines 150-161 with
 ```
 [ ! -d "$HOME/bin" ] && mkdir "$HOME/bin"
 cp rclone "$HOME/bin/rclone"
-chmod 755 "$HOME/bin/rcone" 
+chmod 755 "$HOME/bin/rclone" 
 ```
 and then run `sh install.sh` to make `rclone` available in the `~/bin` directory.
 
