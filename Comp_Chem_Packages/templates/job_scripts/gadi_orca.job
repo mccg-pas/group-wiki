@@ -1,0 +1,14 @@
+#!/bin/bash
+#PBS -P k96
+#PBS -l walltime=24:00:00
+#PBS -l mem=192GB
+#PBS -l ncpus=48
+#PBS -l jobfs=200GB
+#PBS -l software=orca4
+#PBS -l wd
+
+module load orca/4.2.1
+
+time $ORCA_PATH/orca name.inp > name.log
+
+find . -empty -delete
