@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH -J name
+#SBATCH -e name.%j.err
+#SBATCH -N 1
+#SBATCH -n 16
+#SBATCH -c 1
+#SBATCH --mem=64G
+#SBATCH -t 24:00:00
+#SBATCH -p comp,short
+#SBATCH -q partner
+
+export PROJECT="p2015120004"
+
+module load orca/4.2.1-216
+
+time $ORCA_ROOT/orca name.inp > name.log
+
+find . -empty -delete

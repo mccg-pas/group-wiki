@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH -J name
+#SBATCH -e name.%j.err
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -c 16
+#SBATCH -t 03:00:00
+#SBATCH --mem=64GB
+#SBATCH --qos=partner
+
+export PROJECT="p2015120004"
+
+module load psi4/v1.1
+psi4 name.inp name.log
+find . -empty -delete
