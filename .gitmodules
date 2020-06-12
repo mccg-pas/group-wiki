@@ -1,3 +1,6 @@
 [submodule "Scripts/LAMMPS"]
 	path = Scripts/LAMMPS
 	url = https://github.com/PHalat/LAMMPS.git
+[submodule "Scripts/FMO-PIEDA"]
+	path = Scripts/FMO-PIEDA
+	url = https://github.com/PHalat/FMO-PIEDA.git
