@@ -1,6 +1,6 @@
 # Python tutorial
 
-Have a look through this [tutorial](Tutorials/python_tutorial.md) for some useful tips on using Python. 
+Have a look through this [tutorial](python_tutorial.md) for some useful tips on using Python. 
 
 # Compiling software
 
