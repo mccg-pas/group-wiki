@@ -7,7 +7,7 @@ These parameters are OPLS-style parameters, and are available directly in a wide
 This script requires the LAMMPS and GROMACS output of the LigParGen results, and will convert these into the fftool-style parameters and topology required for an MD simulation.
 Using the script is simple, using the following format:
 
-python convertLigParGen.py -g [.itp file] -l [.lmp file] -o [output name]
+python convertLigParGen.py -g [.top file] -l [.lmp file] -o [output name]
 
-Where the -g flag signals the GROMACS .itp file, -l signals the LAMMPS .lmp file (both from the LigParGen webserver), -o flags the desired output name, and -xyz is an optional argument for the name of the .xyz file generated; otherwise it will be based on the output name.
+Where the -g flag signals the GROMACS .top file, -l signals the LAMMPS .lmp file (both from the LigParGen webserver), -o flags the desired output name, and -xyz is an optional argument for the name of the .xyz file generated; otherwise it will be based on the output name.
 Calling the script with the -h flag will instead show the documentation for the script.
