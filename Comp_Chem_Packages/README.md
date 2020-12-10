@@ -11,3 +11,5 @@ used by the group use the SLURM scheduler.
 
 Makefiles should be placed in src/MAKE/MACHINES, then the corresponding build script can be
 run from the top directory.
+Note: use these makefiles as a guide for which compiler flags are needed, but modify the makefiles
+that are provided with each distribution otherwise errors will probably arise.
