@@ -6,3 +6,8 @@ Monarch, Raijin and Stampede2 (Texas) supercomputers.
 
 Note: Raijin uses the PBS scheduler while every other supercomputer currently
 used by the group use the SLURM scheduler.
+
+# LAMMPS compilation
+
+Makefiles should be placed in src/MAKE/MACHINES, then the corresponding build script can be
+run from the top directory.
