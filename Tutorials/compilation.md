@@ -18,8 +18,6 @@ Steps are as follows:
 - compile all source code
 - link the code to an executable
 
-
-
 ## LAMMPS install
 
 - On MacOS machines, can use Homebrew: `brew install lammps`
