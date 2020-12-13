@@ -13,4 +13,5 @@ Makefiles should be placed in src/MAKE/MACHINES, then the corresponding build sc
 run from the top directory.
 
 Note: use these makefiles as a guide for which compiler flags are needed, but modify the makefiles
-that are provided with each distribution otherwise errors will probably arise.
+that are provided with each distribution otherwise errors will probably arise. Compiling the 29 Oct 2020 version or later 
+requires the `-std=c++11` flag to be added to the CCFLAGS variable.
