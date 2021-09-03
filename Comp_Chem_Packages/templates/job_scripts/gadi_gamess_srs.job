@@ -1,5 +1,6 @@
 #!/bin/sh
 #PBS -P k96
+#PBS -l storage=scratch/k96+gdata/k96
 #PBS -l mem=96gb
 #PBS -l ncpus=48
 #PBS -l jobfs=100gb
@@ -8,4 +9,4 @@
 
 module load openmpi/3.1.4
 
-/home/565/zls565/.local/gamess19-srs/rungms.gadi.ln name.inp $PBS_NCPUS > name.log
+/g/data/k96/apps/gamess19-srs/rungms.gadi.ln name.inp $PBS_NCPUS > name.log
